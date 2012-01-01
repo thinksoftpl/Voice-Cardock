@@ -273,12 +273,14 @@ public class VoiceCarDockActivity extends Activity implements OnInitListener {
 			maxSpeed = saveState.getLong("maxSpeed", 0);
 			bar.setMaxTripSpeed(Integer.valueOf(maxSpeed+""));
 			if (saveState.getBoolean("isStartLocation", false)){
+				startLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 				startLocation.setLatitude(Double.parseDouble(saveState.getString("startLocationLatitude", "0")));
 				startLocation.setLongitude(Double.parseDouble(saveState.getString("startLocationLongitude", "0")));
 			}
 			if (saveState.getBoolean("isLastLocation", false)){
+				lastLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 				lastLocation.setLatitude(Double.parseDouble(saveState.getString("lastLocationLatitude", "0")));
-				lastLocation.setLongitude(Double.parseDouble(saveState.getString("ladtLocationLongitude", "0")));
+				lastLocation.setLongitude(Double.parseDouble(saveState.getString("lastLocationLongitude", "0")));
 			}	
 			pointToPointDistance = Double.parseDouble(saveState.getString("pointToPointDistance", "0"));
 		}
