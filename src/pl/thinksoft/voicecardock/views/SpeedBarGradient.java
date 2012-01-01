@@ -100,7 +100,7 @@ public class SpeedBarGradient extends SurfaceView implements Runnable{
 		this.pref = pref;
 	}
 	
-	@Override
+//	@Override
 	public void run() {
 		while(isOK){
 			try {

@@ -1,12 +1,7 @@
 package pl.thinksoft.voicecardock;
 
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.ObjectOutput;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
 import java.text.DecimalFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -59,7 +54,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class VoiceCarDockActivity extends Activity implements OnInitListener, Serializable {
+public class VoiceCarDockActivity extends Activity implements OnInitListener {
 		     
 	private static final int VOICE_RECOGNITION_REQUEST_CODE = 1;
 	private static final int INTENT_FOR_CONFIG = 500;
@@ -175,7 +170,7 @@ public class VoiceCarDockActivity extends Activity implements OnInitListener, Se
 			builder.setMessage("Can't find the GPS provider!.\nApplication will close.");
 			builder.setNeutralButton("OK", new DialogInterface.OnClickListener() {
 				
-				@Override
+//				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					VoiceCarDockActivity.this.finish();
 				}
@@ -194,7 +189,7 @@ public class VoiceCarDockActivity extends Activity implements OnInitListener, Se
         super.onStop();
     }
 	
-	@Override
+//	@Override
 	public void onInit(int status) {
 //		 if (status == TextToSpeech.SUCCESS){
 //			 Toast.makeText(getApplicationContext(), "aplikacja start",Toast.LENGTH_SHORT).show();
@@ -372,7 +367,7 @@ public class VoiceCarDockActivity extends Activity implements OnInitListener, Se
 	private void checkVoiceRecognition() {
 		OnClickListener listener = new OnClickListener() {
 
-			@Override
+//			@Override
 			public void onClick(View v) {
 				if (v.getId() == R.id.btnspeak) {
 					startVoiceRecognitionActivity();
@@ -420,7 +415,7 @@ public class VoiceCarDockActivity extends Activity implements OnInitListener, Se
 			builder.setMessage("Brak dostępu do sieci.\nAplikacja kończy działanie.");
 			builder.setNeutralButton("OK", new DialogInterface.OnClickListener() {
 				
-				@Override
+//				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					VoiceCarDockActivity.this.finish();
 				}
@@ -794,7 +789,7 @@ public class VoiceCarDockActivity extends Activity implements OnInitListener, Se
 		builder.setMessage("Would you like to stop the application?");
 //		builder.setNeutralButton("OK", new DialogInterface.OnClickListener() {
 		builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-			@Override
+//			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				clearOnPause();
 		    	finish();
@@ -804,7 +799,7 @@ public class VoiceCarDockActivity extends Activity implements OnInitListener, Se
 		});
 		
 		builder.setNegativeButton("No",new DialogInterface.OnClickListener() {
-			@Override
+//			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				dialog.dismiss();
 			}
