@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/settingsCarTitle">
+        <EditTextPreference android:summary="@string/settingsMaxSpeedSummary" android:defaultValue="200" android:title="@string/settingsMaxSpeed" android:key="maxSpeed"></EditTextPreference>
+        <EditTextPreference android:title="@string/settingsDistance" android:key="distanceV30" android:summary="@string/settingsRefreshLocation" android:defaultValue="1000" android:dialogMessage="@string/inMeters"></EditTextPreference>
+        <EditTextPreference android:key="time30v" android:title="@string/settingsSpeed" android:summary="@string/settingsRefreshLocation" android:defaultValue="15" android:dialogMessage="@string/inSeconds"></EditTextPreference>
+        <ListPreference android:entries="@array/speedUnit" android:title="@string/settingsSpeedUnit" android:entryValues="@array/speedUnit" android:key="speedUnit" android:defaultValue="km/h"></ListPreference>
+        <ListPreference android:key="avgSpeed" android:title="@string/avgSpeedMenu" android:defaultValue="1" android:entries="@array/avgSpeedVal" android:entryValues="@array/avgSpeed"></ListPreference>
+        <CheckBoxPreference android:defaultValue="true" android:title="@string/maxSpeedOnBar" android:key="maxSpeedOnBar"></CheckBoxPreference>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/settingInCall">
+        <CheckBoxPreference android:key="speakerOn" android:title="@string/callForSpeaker" android:defaultValue="false"></CheckBoxPreference>
+    </PreferenceCategory><PreferenceCategory android:title="@string/settingsMain">
+        <CheckBoxPreference android:title="@string/settingsWakelock" android:key="wakeLock" android:defaultValue="true"></CheckBoxPreference>
+    </PreferenceCategory>
+    
+</PreferenceScreen>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Voice Car Dock</string>
+    <string name="app_name">Voice CarDock</string>
+    <string name="initTTSSuccess">Application ready</string>
+    <string name="recognitionButton">Voice command</string>
+    <string name="regbutton">Regular expr.</string>
+    <string name="tvProvider">Checking...</string>
+    <string name="tvInformations"></string>
+    <string name="tvAdres"></string>
+    <string name="tvSpeed"></string>
+    <string name="enable_GPS">Enable GPS</string>
+    <string name="GPS_enabled">GPS enabled</string>
+    <string name="no_voice_recogn">Voice recognition not available</string>
+    
+    <string name="distance">Distance </string>
+    <string name="avgSpeed">Avg speed</string>
+    <string name="_meters">m</string>
+    <string name="voice_command">voice command</string>
+    <string name="statisticHeader">Statistic</string>
+    <string name="localizationHeader">Location</string>
+    <string name="noNetwork">Lack of access to the Internet.\nThe application quits</string>
+    <string name="errorDialogTitle">Error!</string>
+    <string name="settingsMenu">Settings</string>
+    <string name="settingsCarTitle">Car settings</string>
+    <string name="settingsMaxSpeedSummary">"Max speed (speedar scalling)"</string>
+    <string name="settingsMaxSpeed">Max speed</string>
+    <string name="settingsRefreshLocation">Location refresh</string>
+    <string name="settingsDistance">distance when V \u003E 30</string>
+    <string name="settingsSpeed">time when V \u003C 30</string>
+    <string name="settingsSpeedUnit">speed unit</string>
+    <string name="settingsMain">Global settings</string>
+    <string name="settingsWakelock">Disable screen turns off</string>
+    <string name="inMeters">in meters</string>
+    <string name="inSeconds">w seconds</string>
+    <string name="findCall">call to</string>
+    <string name="chooseNumber">Choose number</string>
+    <string name="noContacts">no contacts found</string>
+    <string name="avgSpeedMenu">calculate average speed</string>
+    <string name="settingInCall">Calls settings</string>
+    <string name="callForSpeaker">Send call to speaker</string>
+    <string name="wait">wait...</string>
+    <string name="maxSpeedOnBar">Show max Speed on bar</string>
+    <string name="exitButton">Exit</string>
+</resources>

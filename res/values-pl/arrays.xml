@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Used in configuration -->
+    <string-array name="speedUnit">
+        <item>km/h</item>
+        <item>mph</item>   
+    </string-array>
+    <string-array name="avgSpeedVal">
+        <item>również na postoju</item>
+        <item>tylko w ruchu</item>   
+    </string-array>
+    <string-array name="avgSpeed">
+        <item>0</item>
+        <item>1</item>   
+    </string-array>
+ </resources>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Voice Car Dock</string>
+    <string name="app_name">Voice CarDock</string>
+    <string name="initTTSSuccess">Aplikacja gotowa</string>
+    <string name="recognitionButton">Rozpoznawanie mowy</string>
+    <string name="regbutton">Regularka</string>
+    <string name="tvProvider">Sprawdzam...</string>
+    <string name="tvInformations"></string>
+    <string name="tvAdres"></string>
+    <string name="tvSpeed"></string>
+    <string name="enable_GPS">Proszę włączyć moduł GPS</string>
+    <string name="GPS_enabled">GPS włączony</string><string name="no_voice_recogn">Funkcja rozpoznawania mowy niedostępna</string>
+    
+    <string name="distance">Odległość </string>
+    <string name="avgSpeed">Średnio</string>
+    <string name="_meters">m</string>
+    <string name="voice_command">komenda głosowa</string>
+    <string name="statisticHeader">Statystyka</string>
+    <string name="localizationHeader">Lokalizacja</string>
+    <string name="noNetwork">Brak dostępu do internetu./n Aplikacja kończy działanie</string>
+    <string name="errorDialogTitle">Błąd!</string>
+    <string name="settingsMenu">Ustawienia</string>
+    <string name="settingsCarTitle">Ustawienia samochodowe</string>
+    <string name="settingsMaxSpeedSummary">"Maksymalna prędkość (skalowanie speedbar'a)"</string>
+    <string name="settingsMaxSpeed">Maksymalna prędkość</string>
+    <string name="settingsRefreshLocation">Odświerzanie lokalizacji</string>
+    <string name="settingsDistance">odległość przy V \u003E 30</string>
+    <string name="settingsSpeed">czas przy V \u003C 30</string>
+    <string name="settingsSpeedUnit">jednostka prędkości</string>
+    <string name="settingsMain">Ustawienia ogólne</string>
+    <string name="settingsWakelock">Podświetlenie ekranu</string>
+    <string name="inMeters">w metrach</string>
+    <string name="inSeconds">w sekundach</string>
+    <string name="findCall">zadzwoń do</string>
+ 	<string name="chooseNumber">Wybierz numer</string>
+ 	<string name="noContacts">Brak kontaktów</string>   
+    <string name="avgSpeedMenu">Obliczanie średniej prędkości</string>
+    <string name="settingInCall">Ustawienia dotyczące połączeń</string>
+    <string name="callForSpeaker">Rozmowa przez głośnik</string>
+	<string name="wait">Czekaj...</string> 	
+	<string name="maxSpeedOnBar">Zaznacz maks. prędkość na speed-barze</string>
+	<string name="exitButton">Wyjście</string>
+	
+</resources>
