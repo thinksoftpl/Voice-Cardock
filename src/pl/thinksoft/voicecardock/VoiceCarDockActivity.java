@@ -258,6 +258,7 @@ public class VoiceCarDockActivity extends Activity implements OnInitListener {
 			editor.putString("lastLocationLongitude", String.valueOf(lastLocation.getLongitude()));
 		}
 		editor.putString("pointToPointDistance", String.valueOf(pointToPointDistance));
+		editor.putInt("realDistance", realDistance);
 //		startLocation.getLatitude() startLocation.getLongitude()
 		editor.commit();
 	}
@@ -283,6 +284,7 @@ public class VoiceCarDockActivity extends Activity implements OnInitListener {
 				lastLocation.setLongitude(Double.parseDouble(saveState.getString("lastLocationLongitude", "0")));
 			}	
 			pointToPointDistance = Double.parseDouble(saveState.getString("pointToPointDistance", "0"));
+			realDistance = saveState.getInt("realDistance", 0);
 		}
 	}
 	
