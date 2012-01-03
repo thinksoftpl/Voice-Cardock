@@ -247,6 +247,7 @@ public class VoiceCarDockActivity extends Activity implements OnInitListener {
 		editor.putString("tvStartTime", (String)tvStartTime.getText());
 		editor.putString("tvAvgSpeed", (String)tvAvgSpeed.getText());
 		editor.putLong("maxSpeed", maxSpeed);
+		editor.putLong("firstFixGPS", firstFixGPS);
 		if (startLocation != null){
 			editor.putBoolean("isStartLocation", true);
 			editor.putString("startLocationLatitude", String.valueOf(startLocation.getLatitude()));
@@ -273,6 +274,7 @@ public class VoiceCarDockActivity extends Activity implements OnInitListener {
 			tvAvgSpeed.setText(saveState.getString("tvAvgSpeed", ""));
 			maxSpeed = saveState.getLong("maxSpeed", 0);
 			bar.setMaxTripSpeed(Integer.valueOf(maxSpeed+""));
+			firstFixGPS = saveState.getLong("firstFixGPS", 0);
 			if (saveState.getBoolean("isStartLocation", false)){
 				startLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 				startLocation.setLatitude(Double.parseDouble(saveState.getString("startLocationLatitude", "0")));
