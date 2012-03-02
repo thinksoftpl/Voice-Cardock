@@ -42,4 +42,5 @@
     <string name="wait">wait...</string>
     <string name="maxSpeedOnBar">Show max Speed on bar</string>
     <string name="exitButton">Exit</string>
+    <string name="resetButton">Reset</string>
 </resources>

@@ -41,5 +41,6 @@
 	<string name="wait">Czekaj...</string> 	
 	<string name="maxSpeedOnBar">Zaznacz maks. prędkość na speed-barze</string>
 	<string name="exitButton">Wyjście</string>
+	<string name="resetButton">Zeruj</string>
 	
 </resources>

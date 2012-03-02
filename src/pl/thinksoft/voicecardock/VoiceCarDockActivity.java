@@ -150,6 +150,10 @@ public class VoiceCarDockActivity extends Activity implements OnInitListener {
 	    	Intent configIntent = new Intent(getApplicationContext(), SettingsActivity.class);
 	    	startActivityForResult(configIntent, INTENT_FOR_CONFIG);
 	        return true;
+	    case R.id.reset:
+	    	clearOnPause();
+	    	resumeOnPause(true);
+	    	return true;
 	    case R.id.exit:
 	    	Log.d("VCDA", "close dialog");
 	    	closeDialog();
@@ -202,11 +206,12 @@ public class VoiceCarDockActivity extends Activity implements OnInitListener {
 	public void onResume(){
 		super.onResume();
 		activityIsActive = true;
-		resumeOnPause();
+		resumeOnPause(false);
 		setPrefActiveActivity(true);
 		setScreenLock(true);
 		checkGPS();
 		bar.resume();
+		tvMaxSpeed.setText("ala ma ota");
 		Log.d("VCDA","onResume()");
 	}
 	
@@ -264,8 +269,8 @@ public class VoiceCarDockActivity extends Activity implements OnInitListener {
 		editor.commit();
 	}
 	
-	private void resumeOnPause(){
-		if (saveState.getBoolean("savedState", false)){
+	private void resumeOnPause(boolean force){
+		if (saveState.getBoolean("savedState", false) || force){
 			bar.setValue(saveState.getInt("bar", 0), true);
 			tvInformations.setText(saveState.getString("tvInformations", ""));
 			tvAdres.setText(saveState.getString("tvAdres", ""));
@@ -277,13 +282,19 @@ public class VoiceCarDockActivity extends Activity implements OnInitListener {
 			firstFixGPS = saveState.getLong("firstFixGPS", 0);
 			if (saveState.getBoolean("isStartLocation", false)){
 				startLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-				startLocation.setLatitude(Double.parseDouble(saveState.getString("startLocationLatitude", "0")));
-				startLocation.setLongitude(Double.parseDouble(saveState.getString("startLocationLongitude", "0")));
+				if (saveState.getString("startLocationLatitude", "0") != null){
+					startLocation.setLatitude(Double.parseDouble(saveState.getString("startLocationLatitude", "0")));
+					if (saveState.getString("startLocationLongitude", "0") != null)
+						startLocation.setLongitude(Double.parseDouble(saveState.getString("startLocationLongitude", "0")));
+				}
 			}
 			if (saveState.getBoolean("isLastLocation", false)){
 				lastLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-				lastLocation.setLatitude(Double.parseDouble(saveState.getString("lastLocationLatitude", "0")));
-				lastLocation.setLongitude(Double.parseDouble(saveState.getString("lastLocationLongitude", "0")));
+				if (saveState.getString("lastLocationLatitude", "0") != null){
+					lastLocation.setLatitude(Double.parseDouble(saveState.getString("lastLocationLatitude", "0")));
+					if (saveState.getString("lastLocationLongitude", "0") != null)
+						lastLocation.setLongitude(Double.parseDouble(saveState.getString("lastLocationLongitude", "0")));
+				}
 			}	
 			pointToPointDistance = Double.parseDouble(saveState.getString("pointToPointDistance", "0"));
 			realDistance = saveState.getInt("realDistance", 0);
@@ -301,6 +312,11 @@ public class VoiceCarDockActivity extends Activity implements OnInitListener {
 		editor.putString("tvStartTime", "");
 		editor.putString("tvAvgSpeed", "");
 		editor.putLong("maxSpeed", 0);
+		editor.putLong("firstFixGPS", 0);
+		editor.putString("lastLocationLatitude","");
+		editor.putString("lastLocationLongitude","");
+		editor.putString("startLocationLatitude","");
+		editor.putString("startLocationLongitude","");
 		editor.commit();
 	}
 	

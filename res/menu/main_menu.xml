@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/exit" android:title="@string/exitButton" android:icon="@android:drawable/ic_lock_power_off" android:enabled="true" android:visible="true">
-    </item><item android:title="@string/settingsMenu" 
+    <item android:id="@+id/exit" 
+        android:title="@string/exitButton" 
+        android:icon="@android:drawable/ic_menu_close_clear_cancel" 
+        android:enabled="true" 
+        android:visible="true">
+    </item>
+    <item android:id="@+id/reset" 
+        android:icon="@android:drawable/ic_menu_delete" 
+        android:title="@string/resetButton" 
+        android:enabled="true" 
+        android:visible="true">
+    </item>
+    <item android:title="@string/settingsMenu" 
     	android:id="@+id/settingsMenu"
     	android:icon="@android:drawable/ic_menu_preferences" 
     	android:enabled="true" 
