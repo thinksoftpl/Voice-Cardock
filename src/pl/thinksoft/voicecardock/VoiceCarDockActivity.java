@@ -211,7 +211,6 @@ public class VoiceCarDockActivity extends Activity implements OnInitListener {
 		setScreenLock(true);
 		checkGPS();
 		bar.resume();
-		tvMaxSpeed.setText("ala ma ota");
 		Log.d("VCDA","onResume()");
 	}
 	
