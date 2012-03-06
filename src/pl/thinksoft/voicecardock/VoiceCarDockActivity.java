@@ -291,10 +291,12 @@ public class VoiceCarDockActivity extends Activity implements OnInitListener {
 			}
 			if (saveState.getBoolean("isLastLocation", false)){
 				lastLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-				if (saveState.getString("lastLocationLatitude", "0") != null){
-					lastLocation.setLatitude(Double.parseDouble(saveState.getString("lastLocationLatitude", "0")));
-					if (saveState.getString("lastLocationLongitude", "0") != null)
-						lastLocation.setLongitude(Double.parseDouble(saveState.getString("lastLocationLongitude", "0")));
+				if (lastLocation != null){
+					if (saveState.getString("lastLocationLatitude", "0") != null){
+						lastLocation.setLatitude(Double.parseDouble(saveState.getString("lastLocationLatitude", "0")));
+						if (saveState.getString("lastLocationLongitude", "0") != null)
+							lastLocation.setLongitude(Double.parseDouble(saveState.getString("lastLocationLongitude", "0")));
+					}
 				}
 			}	
 			pointToPointDistance = Double.parseDouble(saveState.getString("pointToPointDistance", "0"));
