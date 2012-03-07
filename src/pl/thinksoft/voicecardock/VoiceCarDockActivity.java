@@ -279,26 +279,30 @@ public class VoiceCarDockActivity extends Activity implements OnInitListener {
 			maxSpeed = saveState.getLong("maxSpeed", 0);
 			bar.setMaxTripSpeed(Integer.valueOf(maxSpeed+""));
 			firstFixGPS = saveState.getLong("firstFixGPS", 0);
-			if (saveState.getBoolean("isStartLocation", false)){
-				startLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-				if (startLocation != null){
-					if (saveState.getString("startLocationLatitude", "0") != null){
-						startLocation.setLatitude(Double.parseDouble(saveState.getString("startLocationLatitude", "0")));
-						if (saveState.getString("startLocationLongitude", "0") != null)
-							startLocation.setLongitude(Double.parseDouble(saveState.getString("startLocationLongitude", "0")));
+			try{
+				if (saveState.getBoolean("isStartLocation", false)){
+					startLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+					if (startLocation != null){
+						if (saveState.getString("startLocationLatitude", "0") != null){
+							startLocation.setLatitude(Double.parseDouble(saveState.getString("startLocationLatitude", "as")));
+							if (saveState.getString("startLocationLongitude", "0") != null)
+								startLocation.setLongitude(Double.parseDouble(saveState.getString("startLocationLongitude", "0")));
+						}
 					}
 				}
+				if (saveState.getBoolean("isLastLocation", false)){
+					lastLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+					if (lastLocation != null){
+						if (saveState.getString("lastLocationLatitude", "0") != null){
+							lastLocation.setLatitude(Double.parseDouble(saveState.getString("lastLocationLatitude", "0")));
+							if (saveState.getString("lastLocationLongitude", "0") != null)
+								lastLocation.setLongitude(Double.parseDouble(saveState.getString("lastLocationLongitude", "0")));
+						}
+					}
+				}	
+			}catch (Exception e) {
+				Log.e("VCDA","Exception with restoring stored position");
 			}
-			if (saveState.getBoolean("isLastLocation", false)){
-				lastLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-				if (lastLocation != null){
-					if (saveState.getString("lastLocationLatitude", "0") != null){
-						lastLocation.setLatitude(Double.parseDouble(saveState.getString("lastLocationLatitude", "0")));
-						if (saveState.getString("lastLocationLongitude", "0") != null)
-							lastLocation.setLongitude(Double.parseDouble(saveState.getString("lastLocationLongitude", "0")));
-					}
-				}
-			}	
 			pointToPointDistance = Double.parseDouble(saveState.getString("pointToPointDistance", "0"));
 			realDistance = saveState.getInt("realDistance", 0);
 		}
